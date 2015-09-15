@@ -1,7 +1,8 @@
 // Load the TCP Library
-net = require('net');
-clc = require('cli-color');
-moment = require('moment');
+var net = require('net'),
+    clc = require('cli-color'),
+    moment = require('moment'),
+    config = require('./config');
 
 // Keep track of the chat clients
 var clients = [];
@@ -106,7 +107,7 @@ net.createServer(function (socket) {
   socket.on('end', function () {
       clientService.removeUser(socket);
   });
-}).listen(5000);
+}).listen(config.server.port);
 
 // Put a friendly message on the terminal of the server.
-console.log("Chat server running at port 5000");
+console.log("Chat server running at port " + config.server.port);
