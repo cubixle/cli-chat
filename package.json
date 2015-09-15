@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "moment": "~2.10.6",
+    "cli-color": "~1.0.0"
+  }
+}
